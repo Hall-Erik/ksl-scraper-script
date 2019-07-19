@@ -21,8 +21,8 @@ class Scraper:
 
     def __init__(self):
         self.prefix = 'https://jobs.ksl.com'
-        self.eng_url = "/search/miles/0/keywords/software%20engineer/page/1"
-        self.dev_url = "/search/miles/0/keywords/software%20developer/page/1"
+        self.eng_url = "/search/keywords/software-engineer"
+        self.dev_url = "/search/keywords/software-developer"
         self.headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
         # self.backend_url = 'http://192.168.1.66:5000/api/jobs/new'
         self.backend_url = 'https://career-scraper.herokuapp.com/api/jobs/new'

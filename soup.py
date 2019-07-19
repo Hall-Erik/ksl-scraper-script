@@ -29,8 +29,8 @@ class Scraper:
         self.jobs = {}
         self.page = 1
        
-    def get_jobs(self, url):    
-        data = requests.get(self.prefix + url, headers=self.headers)
+    def get_jobs(self, url):
+        data = requests.get(url, headers=self.headers)
         soup = BeautifulSoup(data.text, 'html.parser')
         names = []
         urls = []
@@ -77,8 +77,8 @@ class Scraper:
         '''
         Loads jobs into memory
         '''
-        self.get_jobs(self.eng_url)
-        self.get_jobs(self.dev_url)
+        self.get_jobs(self.prefix + self.eng_url)
+        self.get_jobs(self.prefix + self.dev_url)
 
     def post_to_backend(self):
         resp = requests.post(self.backend_url, headers=self.headers, json=self.jobs)
